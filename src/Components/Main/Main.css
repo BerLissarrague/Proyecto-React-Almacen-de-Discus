@@ -1,0 +1,12 @@
+main{
+    width: 90%;
+    margin: auto;
+   
+}
+.carousel{
+    width: 90%;  
+    margin: 2% auto; 
+}
+img{
+    max-height: 600px;
+}

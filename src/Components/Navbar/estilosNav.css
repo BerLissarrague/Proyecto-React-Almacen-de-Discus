@@ -1,0 +1,19 @@
+.nav{
+    width: 100%;
+    font-size: 1rem;
+    padding: 2%;
+    display: flex;   
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;}
+    
+.navbar-collapse {  
+    justify-content: space-evenly;  
+}
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #084298;
+    border-color: #084298;
+}
+

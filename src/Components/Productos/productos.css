@@ -1,0 +1,10 @@
+.contenedor{  
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: flex-start;
+    justify-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
