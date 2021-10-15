@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, NavDropdown, Nav, Form, FormControl } from 'react-bootstrap';
 import './../Navbar/Navbar.css';
 import Button from 'react-bootstrap/Button';
+import { GrCart} from 'react-icons/gr';
 
 
 
@@ -34,6 +35,7 @@ const NavBar = () => {
                             aria-label="Buscador"
                         />
                         <Button variant="dark">Buscador</Button>
+                        <GrCart className='carro' />
                     </Form>
                 </Navbar.Collapse>
             </Navbar>

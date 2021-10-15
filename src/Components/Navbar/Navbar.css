@@ -20,4 +20,11 @@
     background-color: #084298;
     border-color: #084298;
 }
+.carro{
+    width: 100px;
+    align-items: center;
+    margin: auto
+    
+}
+
 

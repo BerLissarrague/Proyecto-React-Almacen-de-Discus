@@ -9,9 +9,7 @@ const PecesDiscus = () => {
         <div>
             <Navbar/>
             <Pecesdiscus/>
-            <Footer/>
-
-            
+            <Footer/>            
         </div>
         </>
     )
