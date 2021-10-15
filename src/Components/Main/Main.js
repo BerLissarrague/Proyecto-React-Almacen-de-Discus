@@ -9,41 +9,37 @@ import a6 from './../../assets/a6.png';
 import './Main.css'
 
 const Main = () => {
-    return (<>
-    <main>
-        <Carousel className='carousel' >
-            <Carousel.Item className='carousel-item'>
-                <img
-                    className="d-block w-100"
-                    src={a7}
-                   
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={a1}
-                   
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100 "
-                    src={a6}
-                    
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100 "
-                    src={a3}
-                    
-                />
-            </Carousel.Item>
-            
-        </Carousel>
-        
-        </main>
-    </>)
+    return (
+        <>
+            <main>
+                <Carousel className='carousel' >
+                    <Carousel.Item className='carousel-item'>
+                        <img
+                            className="d-block w-100"
+                            src={a7}
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={a1}
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100 "
+                            src={a6}
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100 "
+                            src={a3}
+                        />
+                    </Carousel.Item>
+                </Carousel>
+
+            </main>
+        </>)
 };
 export default Main;

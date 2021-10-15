@@ -1,7 +1,8 @@
 import React from "react";
 import { Navbar, NavDropdown, Nav, Form, FormControl } from 'react-bootstrap';
-import './../Navbar/estilosNav.css';
-import Button from 'react-bootstrap/Button'
+import './../Navbar/Navbar.css';
+import Button from 'react-bootstrap/Button';
+
 
 
 const NavBar = () => {
@@ -14,17 +15,15 @@ const NavBar = () => {
                     <Nav
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
-                        navbarScroll
-                    >
+                        navbarScroll>
                         <Nav.Link href="#action2" className='item-nav'>Historia</Nav.Link>
-                        <Nav.Link href="#action6" className='item-nav'>Cuidados del agua</Nav.Link>
+                        <Nav.Link href="./../../Pages/Peces-discus.js" className='item-nav'>Cuidados del agua</Nav.Link>
                         <NavDropdown title="Shoop" id="navbarScrollingDropdown" className='item-nav'>
                             <NavDropdown.Item href="#action3">Insumos</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action4">Plantas</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">Peces</NavDropdown.Item>
-                        
                         </NavDropdown>
                     </Nav>
                     <Form className="d-flex buscador">
@@ -36,9 +35,6 @@ const NavBar = () => {
                         />
                         <Button variant="dark">Buscador</Button>
                     </Form>
-
-
-
                 </Navbar.Collapse>
             </Navbar>
         </heder>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {AiFillFacebook, AiOutlineInstagram, AiOutlineMail} from 'react-icons/ai';
-import './estilofooter.css'
+import './Footer.css';
 
 const Footer = () => {
     return (
@@ -16,4 +16,4 @@ const Footer = () => {
         </>
     )
 }
-export default Footer
+export default Footer;

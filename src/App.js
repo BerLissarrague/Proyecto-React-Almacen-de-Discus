@@ -1,20 +1,15 @@
 import React from 'react';
 import './App.css';
-import Titulo from './Components/Titulo/Titulo';
-import NavBar from './Components/Navbar/NavBar';
-import Main from './Components/Main/Main';
-import Product from './Components/Productos/productos';
-import Footer from'./Components/Footer/Footer.js';
+import Home from './Pages/Home';
+import PecesDiscus from './Pages/Peces-discus';
+
 
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Titulo />
-      <Main />
-      <Product />
-      <Footer/>
+     <Home/>
+    
     </>
   );
 }
