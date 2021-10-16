@@ -1,4 +1,4 @@
-.contenedor{  
+.contenedor{
     display: flex;
     justify-content: space-evenly;
     align-content: center;
@@ -8,3 +8,16 @@
     flex-direction: row;
 }
 
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: 25%;
+    margin: 4% 10%;
+}

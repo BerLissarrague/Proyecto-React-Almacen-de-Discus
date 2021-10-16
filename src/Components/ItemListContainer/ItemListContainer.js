@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react'
+import React from "react";
 
-const Saludar =(props)=>{
-    return(
-        <Fragment>
-            <h2>Bienvenido a {props.nombre}</h2>
-        </Fragment>
+const ItemListContainer = () => {
+    retunr(
+        <div>
+            
+        </div>
     )
-};
+    
+}
 
-
-export default Saludar;
-
+export default ItemListContainer
 
