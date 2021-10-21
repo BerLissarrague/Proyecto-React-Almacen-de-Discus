@@ -1,17 +1,12 @@
 import React from "react";
 import './Titulo.css'
-import { Container, Typography } from '@material-ui/core';
-const Titulo = () => {
+
+const Titulo = (props) => {
     return (
         <>
-            <Container>
-                <Typography
-                    align="center"
-                    variant='h2'
-                    color='primary'>
-                    Almacen de Discus
-                </Typography>
-            </Container>
+           <div>
+               <h2> {props.titulo}</h2>
+           </div>
         </>
 
     )

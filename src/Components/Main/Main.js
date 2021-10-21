@@ -1,11 +1,7 @@
 
 import React from "react";
 import { Carousel } from 'react-bootstrap';
-import a3 from './../../assets/a3.png';
-import a7 from './../../assets/a7.png';
-import a1 from './../../assets/a1.png';
 
-import a6 from './../../assets/a6.png';
 import './Main.css'
 
 const Main = () => {
@@ -16,25 +12,25 @@ const Main = () => {
                     <Carousel.Item className='carousel-item'>
                         <img
                             className="d-block w-100"
-                            src={a7}
+                            src='image/a7.png'
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src={a1}
+                            src='image/a1.png'
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100 "
-                            src={a6}
+                            src='image/a6.png'
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100 "
-                            src={a3}
+                            src='image/a3.png'
                         />
                     </Carousel.Item>
                 </Carousel>

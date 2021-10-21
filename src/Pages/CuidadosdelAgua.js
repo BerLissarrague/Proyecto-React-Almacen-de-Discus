@@ -7,9 +7,7 @@ const PecesDiscus = () => {
     return (
         <>
         <div>
-            <Navbar/>
-            <Pecesdiscus/>
-            <Footer/>            
+               
         </div>
         </>
     )

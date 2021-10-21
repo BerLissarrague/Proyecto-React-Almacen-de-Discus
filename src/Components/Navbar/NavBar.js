@@ -1,9 +1,8 @@
 import React from "react";
 import { Navbar, NavDropdown, Nav, Form, FormControl } from 'react-bootstrap';
-import './../Navbar/Navbar.css';
+import './Navbar.css';
 import Button from 'react-bootstrap/Button';
-import CartWidget from "../CartWidget/CartWidget ";
-
+import CartWidget from "./CartWidget/CartWidget ";
 
 
 const NavBar = () => {
