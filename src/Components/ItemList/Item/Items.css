@@ -1,27 +1,26 @@
-
-.contenedor{
+section{  
     display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: flex-start;
-    justify-items: stretch;
+    justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: stretch;
+    
 }
 
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    width: 60%;
+#contenedor{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 30%;   
+}
+
+.imgCard {
+    width: 90%;
     margin: 0 auto;
 }
+
 .btn {
     margin: 1%;
 }

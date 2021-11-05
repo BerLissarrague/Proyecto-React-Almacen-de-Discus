@@ -1,98 +1,113 @@
 const data = [
     {
         id: '1',
-        nombre: ' Discus Turquesa',
-        description:  `Discus variedad Albino.
+        nombre: 'Discus Turquesa',
+        descripcion: `Discus variedad Albino.
         Origen Tailandia. Tamaños entre 4cm y 6cm`,
         precio: 3500,
-        imagen: '/image/Turquesa2.png'
+        imagen: '/image/Turquesa2.png',
+        categoria: 'peces'
     },
 
     {
         id: '2',
         nombre: 'Discus Albinos',
-        description: `Discus variedad Albino.
+        descripcion: `Discus variedad Albino.
         Origen nacionales. Tamaños entre 4cm y 6cm`,
         precio: 2500,
-        imagen: '/image/a4.png'
+        imagen: '/image/a4.png',
+        categoria: 'peces'
+
     },
     {
         id: '3',
-        nombre: 'Ludwigia palustris red',
-        description: 'Una hermosa planta de tallo, fácil de mantener y reproducir. En condiciones optimas, brindara su color rojo.',
+        nombre: 'Ludwigia Palustris Red',
+        descripcion: 'Una hermosa planta de tallo, fácil de mantener y reproducir. En condiciones optimas, brindara su color rojo.',
         precio: 250,
-        imagen: '/image/planta.png'
+        imagen: '/image/planta.png',
+        categoria: 'plantas'
     },
     {
         id: '4',
-        nombre: ' Discus Pidgeon',
-        description:  `Discus variedad Albino.
+        nombre: 'Discus Pidgeon',
+        descripcion: `Discus variedad Albino.
         Origen Nacinal. Tamaños entre 4cm y 6cm`,
         precio: 3500,
-        imagen: '/image/Pidgeon.png'
+        imagen: '/image/Pidgeon.png',
+        categoria: 'peces'
     },
 
     {
         id: '5',
         nombre: 'Tetra Color',
-        description: `Alimento Tetra Color de tretra.
+        descripcion: `Alimento Tetra Color de tretra.
         En su variedad de escamas. Peso 100 gr.`,
         precio: 750,
-        imagen: '/image/tetracolor.png'
+        imagen: '/image/tetracolor.png',
+        categoria: 'insumos'
     },
     {
         id: '6',
-        nombre: 'Alternanthera reineckii',
-        description: 'Una hermosa planta bolbo, dificil de mantener y reproducir. Exigencia de luz media-alta.',
+        nombre: 'Alternanthera Reineckii',
+        descripcion: 'Una hermosa planta bolbo, dificil de mantener y reproducir. Exigencia de luz media-alta.',
         precio: 250,
-        imagen: '/image/reineki.png'
+        imagen: '/image/reineki.png',
+        categoria: 'plantas'
     },
     {
         id: '7',
-        nombre: ' Discus Marlboro',
-        description:  `Discus variedad Marlboro.
+        nombre: 'Discus Marlboro',
+        descripcion: `Discus variedad Marlboro.
         Origen Tailandia. Tamaños entre 4cm y 6cm (unicos en Argentina)`,
         precio: 8500,
-        imagen: '/image/Marlboro.png'
+        imagen: '/image/Marlboro.png',
+        categoria: 'peces'
     },
 
     {
         id: '8',
         nombre: 'Discus Melon',
-        description: `Discus variedad Melon.
+        descripcion: `Discus variedad Melon.
         Origen nacionales. Tamaños entre 6cm y 10cm`,
         precio: 6000,
-        imagen: '/image/Melon.png'
+        imagen: '/image/Melon.png',
+        categoria: 'peces'
     },
     {
         id: '9',
-        nombre: 'Hemianthus callitrichoides "Cuba"',
-        description: 'Es una de las plantas de acuario más pequeñas del mundo, y tapiza sobre el fondo con hojas redondas de tamaño de pocos milímetros.',
+        nombre: 'Hemianthus Callitrichoides "Cuba"',
+        descripcion: 'Es una de las plantas de acuario más pequeñas del mundo, y tapiza sobre el fondo con hojas redondas de tamaño de pocos milímetros.',
         precio: 250,
-        imagen: '/image/planta.png'
+        imagen: '/image/cubana.png',
+        categoria: 'plantas'
+
     },
     {
         id: '10',
         nombre: ' Discus Alenker',
-        description:  `Discus variedad Alenker.
+        descripcion: `Discus variedad Alenker.
         Origen Brasil/Pero. Tamaños entre 4cm y 6cm. Traidos directamente del Amazonas`,
         precio: 6500,
-        imagen: '/image/alenker.png'
+        imagen: '/image/alenker.png',
+        categoria: 'peces'
     },
-
     {
         id: '11',
         nombre: 'Micranthemum tweediei "Montecarlo"',
-        description: `Proviene de Argentina. Sus hojas son compactas, redondas y verdes claras y crea tapizados de crecimiento rápido en la parte delantera del acuario.`,
+        descripcion: `Proviene de Argentina. Sus hojas son compactas, redondas y verdes claras y crea tapizados de crecimiento rápido en la parte delantera del acuario.`,
         precio: 250,
-        imagen: '/image/montecarlo.png'
+        imagen: '/image/montecarlo.png',
+        categoria: 'plantas'
+
     },
     {
         id: '12',
         nombre: 'ONYX SAND - Seachem',
-        description: 'El mejor sustrato del mercado para que tus plantas crezcan fuertes y sanas',
+        descripcion: 'El mejor sustrato del mercado para que tus plantas crezcan fuertes y sanas',
         precio: 5000,
-        imagen: '/image/sustrato.png'
+        imagen: '/image/sustrato.png',
+        categoria: 'insumos'
+
     }
 ]
 

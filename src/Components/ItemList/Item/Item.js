@@ -2,26 +2,24 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Cart } from 'react-bootstrap-icons';
-import './Items.css'
+import { Link } from 'react-router-dom';
+import './Items.css';
 
-const Item = ({ nombre, description, precio, imagen }) => {
+const Item = ({ id, nombre, precio, imagen}) => {
     return (
-        
-        <Card className='contenedor'>
-            <Card.Img variant="top" src={imagen} />
-            <Card.Body>
-                <Card.Title>{nombre}</Card.Title>
-                <Card.Text>
-                    {description}
-                    </Card.Text>
-                    <Card.Text >
-                    <h3> Precio ${precio}  </h3>                 
-                </Card.Text>
-                <Button variant="dark" className='btn-sumarcarro'><Cart/> Sumar al carro </Button>
-                <Button variant="dark" className='btn-ver'>Ver</Button>
-            </Card.Body>
-        </Card>
-    
+        <div id='contenedor'>
+            <Link to={`/producto/${id}`}>
+                <Card>
+                    <Card.Img className='imgCard' variant="top" src={imagen} />
+                    <Card.Body>
+                        <Card.Title>{nombre}</Card.Title>
+                        <Card.Text >  Precio ${precio}  </Card.Text>
+                        <Button variant="dark" className='btn-sumarcarro'><Cart /> Sumar al carro </Button>
+                        <Button variant="dark" className='btn-ver'>Ver mas </Button>
+                    </Card.Body>
+                </Card>
+            </Link>
+        </div>
     )
 }
 export default Item

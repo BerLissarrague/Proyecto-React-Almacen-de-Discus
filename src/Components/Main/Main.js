@@ -1,7 +1,5 @@
-
 import React from "react";
 import { Carousel } from 'react-bootstrap';
-
 import './Main.css'
 
 const Main = () => {

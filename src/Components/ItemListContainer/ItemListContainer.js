@@ -1,32 +1,35 @@
-import React, { useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList.js";
-import data from'./../../data/data.js'
+import data from './../../data/data.js'
 import './ItemListContainer.css'
 
-const ItemListContainer =()=>{
-    const [productos, setProdcutos] = useState([])
-    const[cargando,setCargando]= useState(true)
+const ItemListContainer = () => {
 
-    useEffect(()=>{
-        const listaDeProductos= new Promise ((res,rej)=>{
-            setTimeout(()=>{
+    const [productos, setProductos] = useState ([]);
+    const [cargando, setCargando ] = useState (true)
+    const { categoriaId } = useParams ();
+
+    useEffect(() => {
+        setCargando(true);
+        const listaDeProductos = new Promise((res) => {
+            setTimeout(() => {
                 res(data)
             }, 2000)
-        })
-        listaDeProductos.then((data) =>{
-            setCargando(false)
-            setProdcutos(data);    
-        })
+        });
+        listaDeProductos.then((data) => {
+            setCargando(false)           
+            categoriaId ? setProductos(data.filter ( (i) => i.categoria === categoriaId)) : setProductos(data);
+        });
+    }, [categoriaId]);
 
-      
-    },[productos])
+    return (
+        cargando ? (
+            <h3>Cargando productos</h3>
+        ):(
+        <ItemList productos={productos} />)
+    );
 
-    
-    return(
-        cargando ?  <h4 variant='secondary' style={{ textAlign:"center" }}>Se esta cargando los productos</h4> : <div id='item'><ItemList productos={productos}/></div>
-    )
-    
-        
-}
+};
 
 export default ItemListContainer;

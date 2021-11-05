@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    margin: 0 auto;
+}
+.descripcion{
+    font-weight: 800;
+    margin: 2% 8%;
+}
+
+h3{
+    font-weight: 500;
+    margin: 1% 8%;      
+}
+
+.imgProducto{ 
+    width: 40%;
+    margin: 2% 8%;
+}
+
+.btn-comprar{
+    margin: 0 auto;
+}
+
+.contenItem{
+    display: inline;
+}
+.cotenedorBotton{
+    width: 20%;
+    margin: auto;
+}
+
+
+
