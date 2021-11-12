@@ -1,0 +1,23 @@
+.count{
+    width: 90%;
+    JUSTIFY-CONTENT: center;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: baseline;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.unidades{
+    margin: 6%;
+}
+.btn-agregar{
+    width: 90%;
+    text-align:  center;
+    margin-bottom:2% ;
+  
+}
+.stock{  
+   text-align: center;
+    width: 90%;
+}

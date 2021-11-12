@@ -15,7 +15,7 @@ const ItemListContainer = () => {
         const listaDeProductos = new Promise((res) => {
             setTimeout(() => {
                 res(data)
-            }, 2000)
+            }, 1000)
         });
         listaDeProductos.then((data) => {
             setCargando(false)           

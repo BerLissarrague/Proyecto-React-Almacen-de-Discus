@@ -1,21 +1,33 @@
-import React from 'react';
-import './ItemDetail.css';
+import ItemCount from "../../ItemCount/ItemCount.js"
+import React, {useState, useContext} from "react"
+import { Link } from "react-router-dom"
+import { Context } from "../../../Context/CartContex.js"
+import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
-export const ItemDetail = ({ nombre, imagen, descripcion, precio }) => {
-  return (
-    <>
-      <div className='contenItem'>
-        <h1>{nombre}</h1>
-        <img src={imagen} alt={nombre} className='imgProducto'/>
-        <p className='descripcion'>{descripcion}</p>
-        <h3> Precio : ${precio}</h3>
-      </div>
-      <div className='cotenedorBotton'>
-         <Button variant="dark" className='btn-comprar'> Comprar </Button>
-         <Button variant="dark" className='btn-sumarcarroitem'> Sumar al carrito </Button>
-      </div>
-    </>
-  );
-};
+const ItemDetail=({id, nombre, descripcion, precio, stock, imagen})=>{
+
+    const [compra, setCompra] = useState(false)
+    const {onAdd}= useContext(Context)
+
+    const agregar = (props)=>{
+        setCompra(true) ; 
+        onAdd({id,nombre,precio,imagen, stock}, props.unidades)    
+        alert(`agregaste ${props.unidades} al carrito`);
+    }
+    return (       
+        <Card style={{ width: '50%', margin:' 0 auto'  }}>
+         <Card.Img className='imgCard' variant="top" style={{width:"50%"}} src={imagen} alt={nombre} />
+         <Card.Body>
+             <Card.Title>{nombre}</Card.Title>
+             <Card.Text>  Precio ${precio}  </Card.Text>  
+             <Card.Text>{descripcion}</Card.Text>       
+            {!compra ? <ItemCount stock={stock} onAdd={agregar}/> :
+                <Link to='/cart'><Button>Terminar compra</Button></Link>}                 
+         </Card.Body>
+     </Card>
+    )
+}
+
+export default ItemDetail;

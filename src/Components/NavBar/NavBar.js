@@ -32,7 +32,7 @@ const NavBar = () => {
                                     categorias.map((categoria) => {
                                         return (
                                             <NavDropdown.Item
-                                                key={categoria.key}
+                                                key={categoria.id}
                                                 as={Link}
                                                 to={`/categoria/${categoria.address}`}>{categoria.text}
                                             </NavDropdown.Item>
@@ -49,7 +49,7 @@ const NavBar = () => {
                                 aria-label="Buscador" />
                             <Button variant="dark">Buscador</Button>
                         </Form>
-                        <CartWidget />
+                       <Nav.Link as={Link} to={`/cart` }> <CartWidget /></Nav.Link>
                     </Navbar.Collapse>
                 </Navbar>
             </heder>
