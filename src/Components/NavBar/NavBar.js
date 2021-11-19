@@ -45,7 +45,7 @@ const NavBar = () => {
                             {unidades > 0 &&
                                 <React.Fragment>
                                     <Nav.Link as={Link} to={`/cart`} className="text-white">
-                                        <CartWidget unidades={unidades}/>
+                                        <CartWidget unidades={unidades} color='primary' />
                                     </Nav.Link>
                                     <span className="vertical-divider ml-2 mr-2"></span>
                                 </React.Fragment>

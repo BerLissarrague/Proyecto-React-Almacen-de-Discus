@@ -8,7 +8,7 @@ const CartWidget = () => {
     return (<>
         <div className='contenedor-carro'>
             <GrCart className='carro' /> 
-            <h5 className='cantidaCarrito'>{unidades}</h5>
+            <h5 className='cantidaCarrito' style={{ color:'primary' }} >{unidades}</h5>
         </div>
         
      </>     
