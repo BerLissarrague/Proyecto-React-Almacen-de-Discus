@@ -25,9 +25,10 @@ const Cart = () => {
                         </Card>
                     )}
                     <h4 style={{ margin: " 2% auto" }}>El total del carrito es {total} y tenes {unidades} tipo de productos </h4>
-                    <div div className='bntvaciar' style={{ width: "100%" }} >
+                    <div div className='bntvaciar' style={{ width: "100%", textAlign:'center' }} >
                         <Button onClick={() => clear()}>Vaciar Carro</Button>
-                        <Button>Finalizar Compra</Button>
+                        <Button variant='outline-primary'>Finalizar Compra</Button>
+                       <Link to={'/'}> <Button>Seguir comprando </Button></Link>
                     </div>
                 </>
                 :
