@@ -1,11 +1,12 @@
 .contenedor-carro{
-    width: 100px;
+    width: 150px;
     align-items: center;
     display:flex;
 
 }
 .carro{
     width: 100%;
+    height: 30px;
 }
 .cantidaCarrito{
     color: #0d6efd;

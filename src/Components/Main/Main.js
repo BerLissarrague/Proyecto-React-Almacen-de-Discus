@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from 'react-bootstrap';
-import './Main.css'
+import './Main.css';
 
 const Main = () => {
     return (
@@ -20,10 +20,7 @@ const Main = () => {
                         />
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img
-                            className="d-block w-100 "
-                            src='image/a6.png'
-                        />
+                        <img className="d-block w-100 " src='image/a6.png'/>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img

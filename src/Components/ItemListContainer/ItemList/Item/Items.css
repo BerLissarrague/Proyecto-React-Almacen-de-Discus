@@ -1,3 +1,4 @@
+
 section{  
     display: flex;
     justify-content: space-around;
@@ -19,7 +20,8 @@ section{
 
 .imgCard {
     width: 60%;
-    margin: 2% auto;
+    margin: 5% auto;
+    border-radius: 8%;
 }
 
 .btn {

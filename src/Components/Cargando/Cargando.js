@@ -1,14 +1,13 @@
-import React from 'react'
-import { Spinner } from 'reactstrap';
+import React from 'react';
+
 
 const Cargando = () => {
-    return (
-        <div class="text-center" style={{margin:'8%'}}>
-        <div class="spinner-border text-primary" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
+  return (
+    <div className="text-center" style={{ margin: '8%' }}>
+      <div className="spinner-border text-primary" role="status">
       </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Cargando
+export default Cargando;

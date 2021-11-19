@@ -30,9 +30,9 @@ const ItemCount = (props) =>{
     return(
         <div >
             <div className='count' >
-                <button onClick={handleStock.restaStock}>-</button>
+                <button onClick={handleStock.restaStock } className='btn-sumar-resta'>-</button>
                 <h5 className='unidades'>{unidades}</h5>
-                <button onClick={handleStock.sumaStock}    >+</button>
+                <button onClick={handleStock.sumaStock} className='btn-sumar-resta' >+</button>
             </div>
             <div>
                 <h4 className='stock' >Stock disponible {stock}</h4>

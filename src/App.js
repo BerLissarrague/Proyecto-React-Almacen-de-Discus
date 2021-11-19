@@ -20,12 +20,14 @@ const App = () => {
         <Titulo titulo='Almacen de Discus' />
         <Switch>
           <Route exact path='/'>
-         <Main/>
+        <Main/>
         <Titulo titulo='Shoop de Almacen De Discus' />
             <ItemListContainer/>          
           </Route>
+          <Route exact path='/productos'>
+             <ItemListContainer/>
+          </Route>
           <Route exact path='/productos/:id' component={ItemDetailContainer} />
-        </Switch>
         <Route exact path='/categoria/:categoriaId'>
         <Titulo titulo   /> 
           <ItemListContainer />
@@ -34,6 +36,7 @@ const App = () => {
         <Titulo titulo='Carrito '/>   
           <Cart />
         </Route>
+        </Switch>
         <Footer />
       </CartFuncion>
     </BrowserRouter>
