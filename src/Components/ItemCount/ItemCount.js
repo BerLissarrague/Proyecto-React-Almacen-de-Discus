@@ -8,7 +8,6 @@ const ItemCount = (props) =>{
     const [unidades, setUnidades] = useState(0)
 
     const handleStock={
-
         sumaStock:()=>{
             if(stock===0){
                 alert('no hay stock')
@@ -43,7 +42,6 @@ const ItemCount = (props) =>{
             </div>}
         </div>
     )
-
 }
 
 export default ItemCount;

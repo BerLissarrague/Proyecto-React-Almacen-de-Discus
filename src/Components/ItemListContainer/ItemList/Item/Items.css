@@ -31,3 +31,7 @@ h4{
     text-align: center;
     justify-content: center;
 }
+.cardTitulo{
+    text-decoration: 'none';
+    text-align: 'center' 
+}

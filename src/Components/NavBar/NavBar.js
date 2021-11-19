@@ -49,7 +49,8 @@ const NavBar = () => {
                                 <span className="vertical-divider ml-2 mr-2"></span>
                             </React.Fragment>
                         }
-                    </Nav>                    </Navbar.Collapse>
+                    </Nav>
+                </Navbar.Collapse>
             </Navbar>
 
         </>
