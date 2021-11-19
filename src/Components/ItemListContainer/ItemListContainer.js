@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList/ItemList";
 import db from'../../lib/firebaseConfig';
 import './ItemListContainer.css';
-import { collection,query,getDocs, where, orderBy } from "@firebase/firestore";
+import { collection,query,getDocs, where } from "@firebase/firestore";
 import Cargando from '../Cargando/Cargando.js';
 
 const ItemListContainer = () => {
@@ -18,9 +18,9 @@ const ItemListContainer = () => {
 
     const myItems = categoriaId
       ? query(collection(db, 'Productos'), where('categoria', '==', categoriaId))
-      : query (collection(db, 'Productos'), orderBy('nombre'));
+      : collection(db, 'Productos');
 
-    
+
     getDocs(myItems)
       .then((res) => {
         const results = res.docs.map((doc) => {

@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import db from '../../lib/firebaseConfig'
 import { doc, getDoc } from 'firebase/firestore';
+import Cargando from '../Cargando/Cargando.js'
 
 
 const ItemDetailContainer = ()=>{
@@ -13,9 +14,11 @@ const ItemDetailContainer = ()=>{
     const {id} = useParams()
 
 
-    useEffect(()=>{    
+    useEffect(()=>{
+        
 
         const myItem = doc(db, 'Productos', id);
+
         // aca usamos el paso intermedio de crear un objeto para agregarle el id de firebase, que viene por afuera de nuestro objeto
         getDoc(myItem)
           .then((res) => {
@@ -29,7 +32,7 @@ const ItemDetailContainer = ()=>{
 
     return(
         <div className='detail-container'>
-        {cargando ? <h3>Cargando Productos...</h3> : 
+        {cargando ? <Cargando/> : 
             <ItemDetail {...producto}  />
         }
         </div>
