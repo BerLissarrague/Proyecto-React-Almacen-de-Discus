@@ -5,7 +5,7 @@ const data = [
         descripcion: `Discus variedad Albino.
         Origen Tailandia. Tamaños entre 4cm y 6cm`,
         precio: '3500',
-        imagen: '/image/Turquesa2.png',
+        imagen: '/image/Turquesa.png',
         categoria: 'peces',
         stock: '34'
     },
@@ -33,7 +33,7 @@ const data = [
     {
         id: '4',
         nombre: 'Discus Pidgeon',
-        descripcion: `Discus variedad Albino.
+        descripcion: `Discus variedad Pidgeon.
         Origen Nacinal. Tamaños entre 4cm y 6cm`,
         precio: '3500',
         imagen: '/image/Pidgeon.png',
@@ -43,20 +43,20 @@ const data = [
 
     {
         id: '5',
-        nombre: 'Tetra Color',
-        descripcion: `Alimento Tetra Color de tretra.
+        nombre: 'Tropical Astorcolor',
+        descripcion: `Alimento para tus peces.
         En su variedad de escamas. Peso 100 gr.`,
         precio: '750',
-        imagen: '/image/tetracolor.png',
+        imagen: '/image/tropicalR.jpg',
         categoria: 'insumos',
         stock: '44'
     },
     {
         id: '6',
-        nombre: 'Alternanthera Reineckii',
-        descripcion: 'Una hermosa planta bolbo, dificil de mantener y reproducir. Exigencia de luz media-alta.',
+        nombre: 'Glossostigma elatinoides',
+        descripcion: 'Una hermosa planta facil de mantener y reproducir. Exigencia de luz media-alta, origen sudamericano.',
         precio: '250',
-        imagen: '/image/reineki.png',
+        imagen: '/image/planta2.png',
         categoria: 'plantas', 
         stock: '17'
 
@@ -84,7 +84,7 @@ const data = [
     },
     {
         id: '9',
-        nombre: 'Hemianthus Callitrichoides "Cuba"',
+        nombre: 'Cuba',
         descripcion: 'Es una de las plantas de acuario más pequeñas del mundo, y tapiza sobre el fondo con hojas redondas de tamaño de pocos milímetros.',
         precio: '250',
         imagen: '/image/cubana.png',
@@ -104,7 +104,7 @@ const data = [
     },
     {
         id: '11',
-        nombre: 'Micranthemum tweediei "Montecarlo"',
+        nombre: 'Montecarlo',
         descripcion: `Proviene de Argentina. Sus hojas son compactas, redondas y verdes claras y crea tapizados de crecimiento rápido en la parte delantera del acuario.`,
         precio: '250',
         imagen: '/image/montecarlo.png',

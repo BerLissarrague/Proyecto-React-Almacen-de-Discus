@@ -8,6 +8,7 @@ const ItemCount = (props) =>{
     const [unidades, setUnidades] = useState(0)
 
     const handleStock={
+
         sumaStock:()=>{
             if(stock===0){
                 alert('no hay stock')
@@ -31,14 +32,15 @@ const ItemCount = (props) =>{
             <div className='count' >
                 <button onClick={handleStock.restaStock}>-</button>
                 <h5 className='unidades'>{unidades}</h5>
-                <button onClick={handleStock.sumaStock}>+</button>
+                <button onClick={handleStock.sumaStock}    >+</button>
             </div>
             <div>
                 <h4 className='stock' >Stock disponible {stock}</h4>
             </div>
+            {unidades > 0 &&
             <div className='btn-agregar'>
-                <Button onClick={()=> props.onAdd({unidades}) }>Agregar al carrito</Button>
-            </div>
+            <Button onClick={()=> props.onAdd({unidades}) }>Agregar al carrito</Button>
+            </div>}
         </div>
     )
 

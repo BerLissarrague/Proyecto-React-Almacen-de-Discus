@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList from "../ItemList/ItemList.js";
-import data from './../../data/data.js'
-import './ItemListContainer.css'
+import ItemList from "./ItemList/ItemList";
+import db from'../../lib/firebaseConfig';
+import './ItemListContainer.css';
+import { collection,query,getDocs, where, orderBy } from "@firebase/firestore";
+import Cargando from '../Cargando/Cargando.js';
 
 const ItemListContainer = () => {
 
@@ -10,22 +12,29 @@ const ItemListContainer = () => {
     const [cargando, setCargando ] = useState (true)
     const { categoriaId } = useParams ();
 
-    useEffect(() => {
-        setCargando(true);
-        const listaDeProductos = new Promise((res) => {
-            setTimeout(() => {
-                res(data)
-            }, 1000)
+    
+  useEffect(() => {
+    setCargando(true);
+
+    const myItems = categoriaId
+      ? query(collection(db, 'Productos'), where('categoria', '==', categoriaId))
+      : query (collection(db, 'Productos'), orderBy('nombre'));
+
+    
+    getDocs(myItems)
+      .then((res) => {
+        const results = res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
         });
-        listaDeProductos.then((data) => {
-            setCargando(false)           
-            categoriaId ? setProductos(data.filter ( (i) => i.categoria === categoriaId)) : setProductos(data);
-        });
-    }, [categoriaId]);
+
+        setProductos(results);
+      })
+      .finally(() => setCargando(false));
+  }, [categoriaId]);
 
     return (
         cargando ? (
-            <h3>Cargando productos</h3>
+            <Cargando/>
         ):(
         <ItemList productos={productos} />)
     );

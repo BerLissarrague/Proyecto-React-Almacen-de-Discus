@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, NavDropdown, Nav, Form, FormControl } from 'react-bootstrap';
 import './NavBar.css';
 import Button from 'react-bootstrap/Button';
 import CartWidget from "./CartWidget/CartWidget ";
 import { Link } from "react-router-dom";
+import { Context } from "../../Context/CartContex";
 
 
 
 const NavBar = () => {
+    const { unidades } = useContext(Context)
     const categorias = [
         { id: 'Insumos', address: 'insumos', text: 'Insumos' },
         { id: 'Plantas', address: 'plantas', text: 'Plantas' },
@@ -40,17 +42,15 @@ const NavBar = () => {
                                     })
                                 }
                             </NavDropdown>
-                        </Nav>
-                        <Form className="d-flex buscador">
-                            <FormControl
-                                type="search"
-                                placeholder="Buscador"
-                                className="mr-2"
-                                aria-label="Buscador" />
-                            <Button variant="dark">Buscador</Button>
-                        </Form>
-                       <Nav.Link as={Link} to={`/cart` }> <CartWidget /></Nav.Link>
-                    </Navbar.Collapse>
+                            {unidades > 0 &&
+                                <React.Fragment>
+                                    <Nav.Link as={Link} to={`/cart`} className="text-white">
+                                        <CartWidget unidades={unidades}/>
+                                    </Nav.Link>
+                                    <span className="vertical-divider ml-2 mr-2"></span>
+                                </React.Fragment>
+                            }
+                        </Nav>                    </Navbar.Collapse>
                 </Navbar>
             </heder>
         </>
