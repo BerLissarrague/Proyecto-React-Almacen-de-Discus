@@ -11,21 +11,24 @@ const Main = () => {
                         <img
                             className="d-block w-100"
                             src='image/a7.png'
+                            alt='imagenCarrousel'
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
                             src='image/a1.png'
+                            alt='imagenCarrousel'
                         />
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="d-block w-100 " src='image/a6.png'/>
+                        <img className="d-block w-100 " src='image/a6.png' alt='imagenCarrousel' />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100 "
                             src='image/a3.png'
+                            alt='imagenCarrousel'
                         />
                     </Carousel.Item>
                 </Carousel>

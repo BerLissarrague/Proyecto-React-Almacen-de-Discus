@@ -9,11 +9,10 @@ const CartFuncion = ({children}) =>{
 
     const onAdd = (producto, cantidad) =>{
         const itemExiste = carro.find(item=>item.id===producto.id)
-        if(!itemExiste){
-        
+        if(!itemExiste){        
             setCarro([...carro, {id:producto.id, nombre:producto.nombre, precio:producto.precio, cantidad:cantidad, imagen:producto.imagen, stock:producto.stock, subtotal:(producto.precio*cantidad)}])
             setTotal(total+(producto.precio*cantidad))
-            setUnidades(unidades+1)
+            setUnidades(unidades + cantidad)
         } else {
             const cartAux=carro.map((item)=>{
                 if(item.id===producto.id){
@@ -23,18 +22,17 @@ const CartFuncion = ({children}) =>{
                 return item
             })
             setCarro(cartAux)
-            setTotal(total+(producto.precio*cantidad))
+            setTotal(total)
         }
-    } 
- 
+    }  
   
-    const removeItem=(itemId,subtotal)=>{
-      const cartAux=carro
+    const removeItem=(itemId, subtotal, cantidad)=>{
+      const cartAux = carro
       const index=cartAux.findIndex((item)=>item.id===itemId)
       cartAux.splice(index,1)
       setCarro(cartAux)
-      setUnidades(unidades-1)
-      setTotal(total- subtotal ) 
+      setUnidades(unidades - cantidad)
+      setTotal(total - subtotal) 
   }
 
   const clear = () => {
@@ -56,9 +54,9 @@ const CartFuncion = ({children}) =>{
     return position
   }
 
-
-
-    
+  
+  
+   
     return <Context.Provider value={{carro, unidades, total, onAdd, clear, removeItem,isInCart }}>
         {children}
     </Context.Provider>

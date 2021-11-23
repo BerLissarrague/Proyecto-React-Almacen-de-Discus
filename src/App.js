@@ -7,7 +7,8 @@ import Footer from './Components/Footer/Footer.js';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartFuncion } from "./Context/CartContex.js";
 import Cart from "./Components/Cart/Cart";
-import Main  from "./Components/Main/Main"
+import Main  from "./Components/Main/Main";
+import Buy from'./Components/compra/Compra.js';
 
 
 
@@ -36,7 +37,12 @@ const App = () => {
         <Titulo titulo='Carrito '/>   
           <Cart />
         </Route>
+        <Route exact path='/buy'>
+        <Titulo titulo='Carrito '/>   
+              <Buy />
+            </Route>
         </Switch>
+       
         <Footer />
       </CartFuncion>
     </BrowserRouter>
