@@ -32,6 +32,9 @@ h3{
         border-radius: 0.25rem;
        
 }
+.imgCard{
+    width:50%
+}
 
 .contenItem{
     display: inline;

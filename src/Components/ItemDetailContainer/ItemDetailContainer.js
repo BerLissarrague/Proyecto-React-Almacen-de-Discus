@@ -1,7 +1,7 @@
 import ItemDetail from './ItemDetail/ItemDetail.js';
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import db from '../../lib/firebaseConfig';
+import getDb from '../../lib/firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import Cargando from '../Cargando/Cargando.js';
 
@@ -14,7 +14,7 @@ const ItemDetailContainer = ()=>{
 
 
     useEffect(()=>{
-        const myItem = doc(db, 'Productos', id);       
+        const myItem = doc(getDb, 'Productos', id);       
         getDoc(myItem)
           .then((res) => {
             const result = { id: res.id, ...res.data() };
@@ -31,7 +31,6 @@ const ItemDetailContainer = ()=>{
             <ItemDetail {...producto} key='producto.id'  />
         }
         </div>
-
     )
 }
 export default ItemDetailContainer

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList/ItemList";
-import db from'../../lib/firebaseConfig';
+import getDb from'../../lib/firebaseConfig.js';
 import './ItemListContainer.css';
-import { collection,query,getDocs, where } from "@firebase/firestore";
+import {collection,query,getDocs, where } from "@firebase/firestore";
 import Cargando from '../Cargando/Cargando.js';
 
 const ItemListContainer = () => {
@@ -11,14 +11,13 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState ([]);
     const [cargando, setCargando ] = useState (true)
     const { categoriaId } = useParams ();
-
     
   useEffect(() => {
     setCargando(true);
 
     const myItems = categoriaId
-      ? query(collection(db, 'Productos'), where('categoria', '==', categoriaId))
-      : collection(db, 'Productos');
+      ? query(collection(getDb, 'Productos'), where('categoria', '==', categoriaId))
+      : collection(getDb, 'Productos');
 
 
     getDocs(myItems)

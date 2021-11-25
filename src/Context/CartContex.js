@@ -29,9 +29,10 @@ const CartFuncion = ({children}) =>{
     const removeItem=(itemId, subtotal, cantidad)=>{
       const cartAux = carro
       const index=cartAux.findIndex((item)=>item.id===itemId)
+      const itemExiste = cartAux.find(item=>item.id===itemId)
       cartAux.splice(index,1)
       setCarro(cartAux)
-      setUnidades(unidades - cantidad)
+      setUnidades(unidades - itemExiste.cantidad)
       setTotal(total - subtotal) 
   }
 

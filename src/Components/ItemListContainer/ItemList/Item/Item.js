@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import './Items.css';
 
-const Item = ({ id, nombre, precio, imagen, stock }) => {
+const Item = ({ id, nombre, precio, imagen, stock}) => {
 
     return (
         <div id='contenedor'>

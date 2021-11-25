@@ -1,58 +1,69 @@
-import React, { useEffect, useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
-import {Context} from '../../Context/CartContex';
+import React, { useState, useContext, } from "react";
+import { Context } from '../../Context/CartContex.js';
+import getDb from '../../lib/firebaseConfig';
+import {collection, getDoc,  doc,  addDoc,  updateDoc, } from "firebase/firestore";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import  db  from '../../lib/firebaseConfig';
+import {useHistory} from'react-router-dom';
 
 
-
-
-
-function Buy (){
-   
-    const {carro, total, clear} = useContext(Context)
-    const [user, setUser] = useState({
-        name:"",
-        email:"",
-        address:"",
-        code:""
-    })
+function Buy() {
+    const history = useHistory();
+    const {
+        carro,
+        total,
+        clear
+    } = useContext(Context)
     const [order, setOrder] = useState({})
-    const [id, setId] = useState('')
-
-    //const ordenes =db.collection('Ordenes');
-
-
-    const handleChange=(event)=>{
-        setUser({...user,
-            [event.target.name]: event.target.value})
+    const [user, setUser] = useState({
+        name: "",
+        email: "",
+        address: "",
+        code: ""
+    })
+    const handleChange = (event) => {
+        setUser({
+            ...user,
+            [event.target.name]: event.target.value
+        })
     }
 
-    const handleBuy=()=>{
-        let orderAux={
+    const handleBuy = () => {
+        const cararroAux = carro.map((item) => {
+            return {
+                id: item.id,
+                nombre: item.nombre,
+                precio: item.precio,
+                subtotal: item.subtotal,
+                cantidad: item.cantidad
+            }
+        })        
+        setOrder({
             user,
-            carro,
+            cararroAux,
             total
-        }
-        setOrder(orderAux)
+        })
+        addDoc(collection(getDb, 'Ordenes'), order)
+        cararroAux.forEach((item,index) => {
+          getDoc(doc(getDb, 'Productos',item.id))
+                .then((res) => {
+                    let result = {
+                        id: res.id,
+                        ...res.data()
+                    };
+                    result.stock = result.stock - item.cantidad
+                    updateDoc(doc(getDb, 'Productos', result.id), result)
+                    if (index===cararroAux.length - 1) {
+                        clear()
+                        history.push("/")                        
+                    };
+                })
+        });
+            
     }
+   
+ 
 
-    useEffect(()=>{
-        if(order.carro){
-            console.log(order)
-            //ordenes.add(order)
-            .then((data)=>{
-                setId(data.id)
-                clear()
-                setOrder({})
-            })
-            .catch((e)=>{
-                console.log('error'+e)
-            })
-        }
-    },[order])
-
-    return (
+return (<>
         <div className='buy'>
             <div className='buy-text'>
                 <p>Para continuar con el proceso, complete el formulario con sus datos para que podamos enviar su pedido.</p>
@@ -60,32 +71,27 @@ function Buy (){
             <Form>
                 <FormGroup>
                     <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="Ingrese su e-mail" required onChange={handleChange}/>
+                    <Input type="email" name="email" id="email" placeholder="Ingrese su e-mail" required onChange={handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="name">Apellido y nombre</Label>
-                    <Input type="text" name="name" id="name" placeholder="Ingrese su nombre y apellido" required onChange={handleChange}/>
+                    <Input type="text" name="name" id="name" placeholder="Ingrese su nombre y apellido" required onChange={handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="address">Direccion</Label>
-                    <Input type="text" name="address" id="address" placeholder="Ingrese su direccion" required onChange={handleChange}/>
+                    <Input type="text" name="address" id="address" placeholder="Ingrese su direccion" required onChange={handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="code">Codigo postal</Label>
-                    <Input type="number" name="code" id="code" placeholder="Ingrese su codigo postal" required onChange={handleChange}/>
+                    <Input type="number" name="code" id="code" placeholder="Ingrese su codigo postal" required onChange={handleChange} />
                 </FormGroup>
-                <Button onClick={()=>handleBuy()}>Submit</Button>
+                <Button onClick={() => handleBuy()}>Submit</Button>
             </Form>
-            {id &&
-            <div className='buy-text-ok'>
-                <p>Su orden se genero correctamente y sera enviada a la brevedad, numero de identificacion <strong>{id}</strong></p>
-                <NavLink to={`/`}>
-                    <Button>Regresar al home</Button>
-                </NavLink>
             </div>
-            }
-        </div>
-  );
+            </>
+        
+    );
 }
 
-export default Buy
+
+export default Buy;

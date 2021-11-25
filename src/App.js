@@ -36,14 +36,13 @@ const App = () => {
         <Route exact path='/cart'>
         <Titulo titulo='Carrito '/>   
           <Cart />
-        </Route>
+       </Route>
         <Route exact path='/buy'>
         <Titulo titulo='Carrito '/>   
               <Buy />
             </Route>
-        </Switch>
-       
-        <Footer />
+        </Switch>       
+      <Footer />
       </CartFuncion>
     </BrowserRouter>
 

@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import './NavBar.css';
-
 import CartWidget from "./CartWidget/CartWidget ";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context/CartContex";
-
-
 
 const NavBar = () => {
     const { unidades } = useContext(Context)

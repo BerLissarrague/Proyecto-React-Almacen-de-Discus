@@ -1,0 +1,21 @@
+.cardcarro{
+    width: 50%;
+    margin: 0 auto; 
+}
+.imgCardcarro{
+    width: 75%;
+    border-radius:10%;
+    margin:0 40px;
+    justify-content: center;
+}
+.btnremove{
+    margin: 2% auto;
+}
+.bntvaciar{
+   
+    width:100%;
+    text-Align: center;
+}
+.tituloTotal{
+    margin:  2% 
+}
