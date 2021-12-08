@@ -1,4 +1,4 @@
-import React, { useState, useContext, } from "react";
+import React, { useState, useContext} from "react";
 import { Context } from '../../Context/CartContex.js';
 import getDb from '../../lib/firebaseConfig';
 import { collection, getDoc, doc, addDoc, updateDoc, } from "firebase/firestore";
@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 
 
-function Buy() {
+const Buy = () =>{
     const history = useHistory();
     const {
         carro,
@@ -15,7 +15,7 @@ function Buy() {
         clear
     } = useContext(Context);
 
-    const [order, setOrder] = useState({});
+    const [orden, setOrden] = useState({});
 
     const [user, setUser] = useState({
         name: "",
@@ -31,7 +31,6 @@ function Buy() {
             ...user,
             [event.target.name]: event.target.value
         })
-        event.preventDefault();
     }
 
     const handleBuy = async () => {
@@ -44,13 +43,14 @@ function Buy() {
                 cantidad: item.cantidad
             }
         })
-        setOrder({
-            user,
-            cararroAux,
-            total
-        });
+        
+        setOrden({
+            user, cararroAux, total
+           }
+        )
+      
 
-        const addFirebase = await addDoc(collection(getDb, 'Ordenes'), { user, cararroAux, total }); //cargardo orden a Firebase
+        const addFirebase = await addDoc(collection(getDb, 'Ordenes'),{user, cararroAux, total}); //cargardo orden a Firebase
        
         cararroAux.forEach((item, index) => {// busco y actualizacion del stock en la base de dato de Firebase
             getDoc(doc(getDb, 'Productos', item.id))

@@ -3,10 +3,11 @@ import React, { useState } from "react";
 const Context = React.createContext()
 
 const CartFuncion = ({ children }) => {
-  const [carro, setCarro] = useState([])
-  const [unidades, setUnidades] = useState(0)
-  const [total, setTotal] = useState(0)
-
+  const [carro, setCarro] = useState([]);
+  const [unidades, setUnidades] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [producto, setProducto] = useState({})
+  
   const onAdd = (producto, cantidad) => {
     const itemExiste = carro.find(item => item.id === producto.id)
     if (!itemExiste) {
@@ -22,7 +23,8 @@ const CartFuncion = ({ children }) => {
         return item
       })
       setCarro(cartAux)
-      setTotal(total)
+      setUnidades(unidades + cantidad)
+      setTotal(total + (producto.precio * cantidad))
     }
   }
 
