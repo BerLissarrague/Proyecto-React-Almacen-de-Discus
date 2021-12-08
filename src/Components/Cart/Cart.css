@@ -1,9 +1,9 @@
 .cardcarro{
     width: 50%;
-    margin: 0 auto; 
+    margin: 2% auto; 
 }
 .imgCardcarro{
-    width: 75%;
+    width: 25%;
     border-radius:10%;
     margin:0 40px;
     justify-content: center;

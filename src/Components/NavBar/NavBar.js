@@ -24,7 +24,7 @@ const NavBar = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
                         <Nav.Link as={Link} to={'/Historia'} className='item-nav'>Historia</Nav.Link>
-                        <Nav.Link as={Link} to={'/cuidadosDelAgua'} className='item-nav'>Cuidados del agua</Nav.Link>
+                        <Nav.Link as={Link} to={'/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
                         <NavDropdown title="Productos" id="basic-nav-dropdown">
                             {categorias && categorias.length > 0 &&
                                 categorias.map((categoria) => {

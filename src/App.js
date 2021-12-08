@@ -8,7 +8,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartFuncion } from "./Context/CartContex.js";
 import Cart from "./Components/Cart/Cart";
 import Main  from "./Components/Main/Main";
-import Buy from'./Components/compra/Compra.js';
+import Buy from'./Components/Compra/Compra.js';
+import PecesDiscus from "./Components/Pecesdiscus/Pecesdiscus.js";
+import Historia from "./Components/Historia/Historia.js";
 
 
 
@@ -41,7 +43,16 @@ const App = () => {
         <Titulo titulo='Carrito '/>   
               <Buy />
             </Route>
-        </Switch>       
+            <Route exact path='/cuidadosDeDiscus'>
+        <Titulo titulo='Cuidado de sus Discus '/>   
+              <PecesDiscus />
+            </Route>
+            <Route exact path='/Historia'>
+        <Titulo titulo='Nuestra historia '/>   
+              <Historia />
+            </Route>
+        </Switch>  
+               
       <Footer />
       </CartFuncion>
     </BrowserRouter>

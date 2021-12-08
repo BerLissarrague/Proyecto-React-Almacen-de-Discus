@@ -9,12 +9,11 @@ const Item = ({ id, nombre, precio, imagen, stock}) => {
     return (
         <div id='contenedor'>
             <Link to={`/productos/${id}`}>
-                <Card style={{ textDecoration: 'none' }}>
+                <Card className='card'>
                     <Card.Header><Card.Title className='cardTitulo' >{nombre}</Card.Title></Card.Header>
                     <Card.Img className='imgCard' variant="top" src={imagen} />
-                    <Card.Body style={{ width: "100%" }}>
-                        <Card.Subtitle  > ${precio}  </Card.Subtitle>
-                        <Button variant="dark" className='btn-ver' style={{ width: "100%" }} >Ver mas </Button>
+                    <Card.Body className='cardBody'>                      
+                        <Button variant="dark" className='btn-ver'  >Ver mas </Button>
                     </Card.Body>
                 </Card>
             </Link>

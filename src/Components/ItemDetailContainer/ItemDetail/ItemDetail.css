@@ -21,16 +21,15 @@ h3{
     margin: 0 auto;
 }
 .card {    
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        border: 1px solid rgba(0,0,0,.125);
-        border-radius: 0.25rem;
-       
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;       
 }
 .imgCard{
     width:50%
@@ -44,5 +43,11 @@ h3{
     margin:  auto;
 }
 
-
+.itemCard{ 
+    width: 50%;
+    margin: 8% auto 2%;
+}
+.cardBody{
+    width: 100%;
+}
 

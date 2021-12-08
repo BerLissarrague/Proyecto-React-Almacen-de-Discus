@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #212529;
     align-self: flex-end;
+    position: inherit;
        
 }
 
