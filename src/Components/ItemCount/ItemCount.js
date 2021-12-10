@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Button from 'react-bootstrap/Button';
 import './ItemCount.css';
 import swal from "sweetalert";
 
 
-const ItemCount = (props) => {
-
+const ItemCount = (props,product) => {
     const [stock, setStock] = useState(props.stock)
-    const [unidades, setUnidades] = useState(0)
+    const [unidades, setUnidades] = useState(0)  
+
 
     const handleStock = {
         sumaStock: () => {
@@ -19,8 +19,8 @@ const ItemCount = (props) => {
                 })
             } else {
                 setUnidades(unidades + 1)
-                setStock(stock - 1)
-            }
+                setStock(stock - 1)    
+            } 
         },
         restaStock: () => {
             if (unidades === 0) {
@@ -31,11 +31,13 @@ const ItemCount = (props) => {
                 })
             } else {
                 setUnidades(unidades - 1)
-                setStock(stock + 1)
+                setStock (stock + 1)
             }
-        }
+        },
+       
     }
-
+   
+ 
     return (
         <div >
             <div className='count' >
@@ -48,7 +50,7 @@ const ItemCount = (props) => {
             </div>
             {unidades > 0 &&
                 <div className='btn-agregar'>
-                    <Button onClick={() => props.onAdd({ unidades })}>Agregar al carrito</Button>
+                    <Button onClick={() => props.onAdd({ unidades})}>Agregar al carrito</Button>
                 </div>}
         </div>
     )

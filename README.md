@@ -8,7 +8,8 @@ Cuenta con
 
 - vistas de listas de productos: vista general de productos con foto y detalles mínimos.
 
-- vista de detalles: vista con todos los detalles del producto y la opción de agregar una .cantidad del mismo
+- vista de detalles: vista con todos los detalles del producto y la opción de agregar una cantidad del mismo
+
 
   
 
@@ -37,6 +38,10 @@ Cuenta con
 Uso de Bootstrap para dar formato a la aplicación.
 
 Uso de React Router Dom para la navegación
+
+Uso de FireBase para persistencia de datos
+
+Uso de Sweetalert para los alertas
 
 
 

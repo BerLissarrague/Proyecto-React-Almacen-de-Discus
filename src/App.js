@@ -24,7 +24,7 @@ const App = () => {
         <Switch>
           <Route exact path='/'>
         <Main/>
-        <Titulo titulo='Shoop de Almacen De Discus' />
+        <Titulo subtitulo='Shoop de Almacen De Discus' />
             <ItemListContainer/>          
           </Route>
           <Route exact path='/productos'>
@@ -32,23 +32,23 @@ const App = () => {
           </Route>
           <Route exact path='/productos/:id' component={ItemDetailContainer} />
         <Route exact path='/categoria/:categoriaId'>
-        <Titulo titulo   /> 
+        <Titulo subtitulo="" /> 
           <ItemListContainer />
         </Route>
         <Route exact path='/cart'>
-        <Titulo titulo='Carrito '/>   
+        <Titulo subtitulo='Carrito '/>   
           <Cart />
        </Route>
         <Route exact path='/buy'>
-        <Titulo titulo='Carrito '/>   
+        <Titulo subtitulo='Formulario de compra '/>   
               <Buy />
             </Route>
             <Route exact path='/cuidadosDeDiscus'>
-        <Titulo titulo='Cuidado de sus Discus '/>   
+        <Titulo subtitulo='Cuidado de sus Discus '/>   
               <PecesDiscus />
             </Route>
             <Route exact path='/Historia'>
-        <Titulo titulo='Nuestra historia '/>   
+        <Titulo subtitulo='Nuestra historia '/>   
               <Historia />
             </Route>
         </Switch>  

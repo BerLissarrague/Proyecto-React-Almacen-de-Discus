@@ -29,14 +29,14 @@ const Cart = () => {
                     <div div className='bntvaciar' >
                         <Button onClick={() => clear()}>Vaciar Carro</Button>
                         <Link to={'/buy'}> <Button variant='outline-primary'>Finalizar Compra</Button></Link>
-                        <Link to={'/'}> <Button>Seguir comprando </Button></Link>
+                        <Link to={'/productos'}> <Button>Seguir comprando </Button></Link>
                     </div>
                 </>
                 :
                 <>
                     <Row className='mt-4 text-center'>
                         <Col>
-                            <h2 >No hay items en tu carrito</h2>
+                            <h3 >No hay items en tu carrito</h3>
                             <Button as={Link} to={`/productos`} variant='outline-primary' >Empezá a comprar</Button>
                         </Col>
                     </Row>

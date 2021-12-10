@@ -1,30 +1,39 @@
 import React, { useState } from "react";
 
+
 const Context = React.createContext()
 
 const CartFuncion = ({ children }) => {
   const [carro, setCarro] = useState([]);
   const [unidades, setUnidades] = useState(0);
   const [total, setTotal] = useState(0);
-  const [producto, setProducto] = useState({})
+  const[stock,setStock]= useState(0)
+
+
+
   
-  const onAdd = (producto, cantidad) => {
+   const onAdd = (producto, cantidad) => {
     const itemExiste = carro.find(item => item.id === producto.id)
     if (!itemExiste) {
       setCarro([...carro, { id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: cantidad, imagen: producto.imagen, stock: producto.stock, subtotal: (producto.precio * cantidad) }])
       setTotal(total + (producto.precio * cantidad))
       setUnidades(unidades + cantidad)
-    } else {
+       setStock(producto.stock - cantidad)
+     } else {
       const cartAux = carro.map((item) => {
         if (item.id === producto.id) {
           item.cantidad += cantidad
-          item.subtotal += (producto.precio * cantidad)
+          item.subtotal += (producto.precio * cantidad)  
+          setStock(producto.stock - cantidad)   
         }
         return item
       })
       setCarro(cartAux)
       setUnidades(unidades + cantidad)
-      setTotal(total + (producto.precio * cantidad))
+      setTotal(total + (producto.precio * cantidad))  
+      setStock(producto.stock - cantidad)
+      console.log(stock)
+      setStock(stock)
     }
   }
 
@@ -35,7 +44,8 @@ const CartFuncion = ({ children }) => {
     cartAux.splice(index, 1)
     setCarro(cartAux)
     setUnidades(unidades - itemExiste.cantidad)
-    setTotal(total - subtotal)
+    setStock(stock + cantidad)
+    setTotal(total - subtotal) 
   }
 
   const clear = () => {
@@ -57,7 +67,7 @@ const CartFuncion = ({ children }) => {
     return position
   }
 
-  return <Context.Provider value={{ carro, unidades, total, onAdd, clear, removeItem, isInCart }}>
+  return <Context.Provider value={{ carro, unidades, total, onAdd, clear, removeItem, isInCart}}>
     {children}
   </Context.Provider>
 

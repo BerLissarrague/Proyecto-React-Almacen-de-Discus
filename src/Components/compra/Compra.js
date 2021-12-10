@@ -1,13 +1,14 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { Context } from '../../Context/CartContex.js';
 import getDb from '../../lib/firebaseConfig';
-import { collection, getDoc, doc, addDoc, updateDoc, } from "firebase/firestore";
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { collection, getDoc, doc, addDoc, updateDoc } from "firebase/firestore";
+import { Button, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
+import './Compra.css';
 
 
-const Buy = () =>{
+const Buy = () => {
     const history = useHistory();
     const {
         carro,
@@ -31,10 +32,11 @@ const Buy = () =>{
             ...user,
             [event.target.name]: event.target.value
         })
-    }
+
+    };
 
     const handleBuy = async () => {
-        const cararroAux = carro.map((item) => {
+        const carroAux = carro.map((item) => {
             return {
                 id: item.id,
                 nombre: item.nombre,
@@ -42,82 +44,132 @@ const Buy = () =>{
                 subtotal: item.subtotal,
                 cantidad: item.cantidad
             }
-        })
-        
-        setOrden({
-            user, cararroAux, total
-           }
-        )
-      
-
-        const addFirebase = await addDoc(collection(getDb, 'Ordenes'),{user, cararroAux, total}); //cargardo orden a Firebase
-       
-        cararroAux.forEach((item, index) => {// busco y actualizacion del stock en la base de dato de Firebase
-            getDoc(doc(getDb, 'Productos', item.id))
-                .then((res) => {
-                    let result = {
-                        id: res.id,
-                        ...res.data()
-                    };
-                    result.stock = result.stock - item.cantidad 
-                    updateDoc(doc(getDb, 'Productos', result.id), result)
-                })
         });
-        if (user.email !== "" && user.repetirEmail !== "" && user.code !== "" && user.name !== "" && user.address !== "" && user.telefono !== "") {
+        debugger;
+        setOrden((prevState) => ({
+            ...prevState,
+            user: user,
+            carroAux: carroAux,
+            total: total
+        }));
+        let algo = orden;
+
+        console.log(algo);
+
+        if (user.name !== "" && user.email !== "" && user.repetirEmail !== "" && user.telefono !== "" && user.address !== "" && user.code !== "") {
             if (user.email === user.repetirEmail) {
-                clear()
-                swal({title:"Numero de Orden",
+                const addFirebase = await addDoc(collection(getDb, 'Ordenes'), { user, carroAux, total }); //cargardo orden a Firebase  
+                carroAux.forEach((item, index) => {// busco y actualizacion del stock en la base de dato de Firebase
+                    getDoc(doc(getDb, 'Productos', item.id))
+                        .then((res) => {
+                            let result = {
+                                id: res.id,
+                                ...res.data()
+                            };
+                            result.stock = result.stock - item.cantidad
+                            updateDoc(doc(getDb, 'Productos', result.id), result)
+                        })
+                });
+                clear();
+                history.push("/productos");
+                swal({
+                    title: "Numero de Orden",
                     text: addFirebase.id,
-                    icon: "success"}
-                    )
-                history.push("/")
+                    icon: "success"
+                });
             } else {
                 swal({
-                    text:"Los mail no coinciden",
+                    text: "Los mail no coinciden",
                     icon: "error",
                     timer: "2000"
-                })
+                });
             }
-        } else {swal({
-            text:"Hay un campo vacio",
-            icon: "error",
-            timer: "2000"
-        })
+        } else {
+            swal({
+                text: "Hay un campo vacio",
+                icon: "error",
+                timer: "2000"
+            });
         }
     }
-
     return (
         <>
             <div className='buy'>
                 <div className='buy-text'>
-                    <p>Para continuar con el proceso, complete el formulario con sus datos para que podamos enviar su pedido.</p>
+                    <h3>Para continuar con el proceso, complete el formulario con sus datos para que podamos enviar su pedido.</h3>
                 </div>
-                <Form>
-                    <FormGroup>
-                        <Label for="email">Email</Label>
-                        <Input type="email" name="email" id="email" placeholder="Ingrese su e-mail" required onChange={handleChange} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="email">Repetir email</Label>
-                        <Input type="email" name="repetirEmail" id="email" placeholder="Ingrese su e-mail" onChange={handleChange} required />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="name">Apellido y nombre</Label>
-                        <Input type="text" name="name" id="name" placeholder="Ingrese su nombre y apellido" required onChange={handleChange} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="address">Direccion</Label>
-                        <Input type="text" name="address" id="address" placeholder="Ingrese su direccion" required onChange={handleChange} />
-                    </FormGroup><FormGroup>
-                        <Label for="telefono">telefono</Label>
-                        <Input type="number" name="telefono" id="telefono" placeholder="Ingrese su telefono" required onChange={handleChange} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="code">Codigo postal</Label>
-                        <Input type="number" name="code" id="code" placeholder="Ingrese su codigo postal" required onChange={handleChange} />
-                    </FormGroup>
-                    <Button onClick={() => handleBuy()}>Submit</Button>
+                <Form className='form-container'>
+
+                    <Form.Group >
+                        <Form.Label>Nombre y Apellido</Form.Label>
+                        <Form.Control
+                            name="name"
+                            id="name"
+                            placeholder="Ingrese su nombre y apellido"
+                            required
+                            type="text"
+                            onChange={handleChange}
+                        />
+                        <Form.Group >
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control
+                                name="email"
+                                id="name"
+                                placeholder="Ingrese su Email"
+                                required
+                                type="email"
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group >
+                            <Form.Label>Repita su email</Form.Label>
+                            <Form.Control
+                                name="repetirEmail"
+                                id="emial"
+                                placeholder="Ingrese su Email"
+                                required
+                                type="email"
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+
+                    </Form.Group>
+                    <Form.Group >
+                        <Form.Label>Telefono</Form.Label>
+                        <Form.Control
+                            name="telefono"
+                            id="telefono"
+                            placeholder="Ingrese su telefono"
+                            required
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Direccion</Form.Label>
+                        <Form.Control
+                            name="address"
+                            id="telefono"
+                            placeholder="Ingrese su direccion"
+                            required
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </Form.Group><Form.Group>
+                        <Form.Label>Codigo postal</Form.Label>
+                        <Form.Control
+                            name="code"
+                            id="telefono"
+                            placeholder="Ingrese su codigo postal"
+                            required
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+
+                    <Button onClick={() => handleBuy()} >Submit form</Button>
                 </Form>
+
             </div>
         </>
 
