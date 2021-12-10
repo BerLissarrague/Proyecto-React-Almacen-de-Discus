@@ -1,4 +1,7 @@
-.card{ text-decoration: none;}
+.card{ 
+    text-decoration: none;
+}
+
 section{  
     display: flex;
     justify-content: space-around;
@@ -27,17 +30,21 @@ section{
 .btn {
     margin: 2% ;
 }
+
 .btn-ver{
     width: 80%;
 }
+
 h4{ 
     text-align: center;
     justify-content: center;
 }
+
 .cardTitulo{
     text-decoration: 'none';
     text-align: 'center' 
 }
+
 .cardBody{
      width: 100%
 

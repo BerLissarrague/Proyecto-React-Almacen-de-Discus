@@ -8,17 +8,21 @@
     flex-wrap: nowrap;
     flex-direction: row;
 }
+
 .unidades{
     margin: 6%;
 }
+
 .btn-agregar{
     width: 90%;
     text-align:  center;
 }
+
 .stock{  
    text-align: center;
     width: 90%;
 }
+
 .btn-sumar-resta{
     width: 50px;
     height: 40px;

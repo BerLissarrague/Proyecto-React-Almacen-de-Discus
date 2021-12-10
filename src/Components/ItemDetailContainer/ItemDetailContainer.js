@@ -8,9 +8,9 @@ import Cargando from '../Cargando/Cargando.js';
 
 const ItemDetailContainer = () => {
 
-  const [producto, setProducto] = useState({})
-  const [cargando, setCargando] = useState(true)
-  const { id } = useParams()
+  const [producto, setProducto] = useState({});
+  const [cargando, setCargando] = useState(true);
+  const { id } = useParams();
 
 
   useEffect(() => {

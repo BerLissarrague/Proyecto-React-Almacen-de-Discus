@@ -31,9 +31,9 @@ const Buy = () => {
         setUser({
             ...user,
             [event.target.name]: event.target.value
-        })
+        });
 
-    };
+    }
 
     const handleBuy = async () => {
         const carroAux = carro.map((item) => {
@@ -46,37 +46,36 @@ const Buy = () => {
             }
         });
         debugger;
-        setOrden((prevState) => ({
-            ...prevState,
-            user: user,
-            carroAux: carroAux,
-            total: total
-        }));
-        let algo = orden;
-
-        console.log(algo);
+        setOrden({
+            user,
+            carroAux,
+            total
+        });
+        console.log(orden)
 
         if (user.name !== "" && user.email !== "" && user.repetirEmail !== "" && user.telefono !== "" && user.address !== "" && user.code !== "") {
             if (user.email === user.repetirEmail) {
-                const addFirebase = await addDoc(collection(getDb, 'Ordenes'), { user, carroAux, total }); //cargardo orden a Firebase  
-                carroAux.forEach((item, index) => {// busco y actualizacion del stock en la base de dato de Firebase
+                const addFirebase = await addDoc(collection(getDb, 'Ordenes'), { user, carroAux, total })//cargardo orden a Firebase || Deberia pasar orden,  en lugar de {user,  carroAux, total}. pero orden es undefine                ;  
+                carroAux.forEach((item, index) => {// busca y actualiza el stock en la base de dato de Firebase
                     getDoc(doc(getDb, 'Productos', item.id))
                         .then((res) => {
                             let result = {
                                 id: res.id,
                                 ...res.data()
                             };
-                            result.stock = result.stock - item.cantidad
-                            updateDoc(doc(getDb, 'Productos', result.id), result)
-                        })
+                            result.stock = result.stock - item.cantidad;
+                            updateDoc(doc(getDb, 'Productos', result.id), result);
+                        });
                 });
                 clear();
                 history.push("/productos");
                 swal({
-                    title: "Numero de Orden",
-                    text: addFirebase.id,
+                    title:"Compra realizada con exito. Numero de Orden",
+                  
+                    text:   addFirebase.id,
                     icon: "success"
-                });
+                }
+                );
             } else {
                 swal({
                     text: "Los mail no coinciden",
@@ -90,8 +89,8 @@ const Buy = () => {
                 icon: "error",
                 timer: "2000"
             });
-        }
-    }
+        };
+    };
     return (
         <>
             <div className='buy'>

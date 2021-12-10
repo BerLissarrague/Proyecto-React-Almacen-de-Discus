@@ -11,20 +11,20 @@ import swal from "sweetalert";
 
 const ItemDetail = ({ id, nombre, descripcion, precio, stock, imagen }) => {
 
-    const [compra, setCompra] = useState(false)
-    const { onAdd } = useContext(Context)
-    
-    
-    const agregar = (props) => {      
-    
+    const [compra, setCompra] = useState(false);
+    const { onAdd } = useContext(Context);
+
+    const agregar = (props) => {
+
         setCompra(true);
-        onAdd({ id, nombre, precio, imagen, stock}, props.unidades)
+        onAdd({ id, nombre, precio, imagen, stock }, props.unidades);
         swal({
             text: `Agregaste ${props.unidades} ${nombre} al carrito`,
             icon: "info",
             timer: "3000"
         });
     }
+    
     return (
         <Card className='itemCard'>
             <Card.Img className='imgCard' variant="top" src={imagen} alt={nombre} />
@@ -37,7 +37,7 @@ const ItemDetail = ({ id, nombre, descripcion, precio, stock, imagen }) => {
                 }
             </Card.Body>
         </Card>
-    )
+    );
 }
 
 export default ItemDetail;

@@ -3,10 +3,12 @@
     width: 75%;
     margin: 0 auto;
 }
+
 .contenedor-btn{
     width: 100%;
     justify-content: center;
 }
+
 .btn-submit{
     width: 100%;
     margin: 4% auto;
