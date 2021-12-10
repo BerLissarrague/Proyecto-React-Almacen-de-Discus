@@ -47,7 +47,7 @@ Uso de Sweetalert para los alertas
 
 ## Aplicación funcionando
 
- ![ Alt Almacen de Discus en funcion](https://github.com/BerLissarrague/Proyecto-React-Rey-Leon/blob/master/primer_entrega.gif) 
+ ![ Alt Almacen de Discus en funcion](https://github.com/BerLissarrague/Proyecto-React-Almacen-de-Discus/blob/master/Animation.gif) 
 
 
 
