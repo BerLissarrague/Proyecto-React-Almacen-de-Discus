@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import './Compra.css';
 
-
 const Buy = () => {
     const history = useHistory();
     const {
@@ -32,7 +31,6 @@ const Buy = () => {
             ...user,
             [event.target.name]: event.target.value
         });
-
     }
 
     const handleBuy = async () => {
@@ -45,14 +43,11 @@ const Buy = () => {
                 cantidad: item.cantidad
             }
         });
-        debugger;
         setOrden({
             user,
             carroAux,
             total
         });
-        console.log(orden)
-
         if (user.name !== "" && user.email !== "" && user.repetirEmail !== "" && user.telefono !== "" && user.address !== "" && user.code !== "") {
             if (user.email === user.repetirEmail) {
                 const addFirebase = await addDoc(collection(getDb, 'Ordenes'), { user, carroAux, total })//cargardo orden a Firebase || Deberia pasar orden,  en lugar de {user,  carroAux, total}. pero orden es undefine                ;  
@@ -70,9 +65,8 @@ const Buy = () => {
                 clear();
                 history.push("/productos");
                 swal({
-                    title:"Compra realizada con exito. Numero de Orden",
-                  
-                    text:   addFirebase.id,
+                    title: "Compra realizada con exito. Numero de Orden",
+                    text: addFirebase.id,
                     icon: "success"
                 }
                 );

@@ -13,7 +13,7 @@ const Item = ({ id, nombre, precio, imagen, stock }) => {
                     <Card.Header><Card.Title className='cardTitulo' >{nombre}</Card.Title></Card.Header>
                     <Card.Img className='imgCard' variant="top" src={imagen} />
                     <Card.Body className='cardBody'>
-                        <Button variant="dark" className='btn-ver'  >Ver mas </Button>
+                        <Button variant="dark" className='btn-ver'> Ver mas </Button>
                     </Card.Body>
                 </Card>
             </Link>

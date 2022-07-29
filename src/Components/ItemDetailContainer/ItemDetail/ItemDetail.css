@@ -1,58 +1,82 @@
-h1{
+h1 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.descripcion {
+  font-weight: 800;
+  margin: 2% 8%;
+}
+
+h3 {
+  font-weight: 500;
+  margin: 1% 8%;
+}
+
+.imgProducto {
+  width: 40%;
+  margin: 2% 8%;
+}
+
+.btn-comprar {
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.card-title {
+    margin-bottom: 0.5rem;
     text-align: center;
-    margin: 0 auto;
 }
 
-.descripcion{
-    font-weight: 800;
-    margin: 2% 8%;
+.imgCard {
+  width: 50%;
 }
 
-h3{
-    font-weight: 500;
-    margin: 1% 8%;      
+.contenItem {
+  display: inline;
 }
 
-.imgProducto{ 
-    width: 40%;
-    margin: 2% 8%;
+.cotenedorBotton {
+  width: auto;
+  margin: auto;
 }
 
-.btn-comprar{
-    margin: 0 auto;
+.itemCard {
+  width: 40%;
+  margin: 2% auto 2%;
 }
 
-.card {    
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.25rem;       
+.cardBody {
+  width: 100%;
 }
 
-.imgCard{
-    width:50%
-}
-
-.contenItem{
-    display: inline;
-}
-
-.cotenedorBotton{
-    width: 20%;
-    margin:  auto;
-}
-
-.itemCard{ 
-    width: 43%;
+@media (max-width: 600px) {
+  .descri {
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+  .imgCard {
+    width: 60%;
+  }
+  .itemCard {
+    width: 50%;
     margin: 2% auto 2%;
+  }
 }
+@media(min-width:601px) and (max-width: 720px) {
+  .itemCard {
+    width: 70%;
+    margin: 2% auto 2%;
+  }
 
-.cardBody{
-    width: 100%;
 }
-

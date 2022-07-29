@@ -4,3 +4,10 @@ h2{
     font-size: 4rem;
     margin-top: 2% 4%;
 }
+
+@media (max-width: 600px) {
+    h2{
+        font-size: 3rem;
+        margin: 4%;
+    }
+}

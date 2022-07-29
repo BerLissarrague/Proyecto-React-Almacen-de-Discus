@@ -1,12 +1,13 @@
 .count{
     width: 90%;
-    JUSTIFY-CONTENT: center;
-    margin: 0 auto;
+   justify-content: center;
+    margin:  auto;
     display: inline-flex;
     align-items: baseline;
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
+    margin-bottom: 1rem;
 }
 
 .unidades{

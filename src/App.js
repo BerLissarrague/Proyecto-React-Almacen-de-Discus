@@ -9,7 +9,7 @@ import { CartFuncion } from "./Context/CartContex.js";
 import Cart from "./Components/Cart/Cart";
 import Main  from "./Components/Main/Main";
 import Buy from'./Components/Compra/Compra.js';
-import PecesDiscus from "./Components/Pecesdiscus/Pecesdiscus.js";
+import PecesDiscus from "./Components/Pecesdiscus/PecesDiscus";
 import Historia from "./Components/Historia/Historia.js";
 
 
