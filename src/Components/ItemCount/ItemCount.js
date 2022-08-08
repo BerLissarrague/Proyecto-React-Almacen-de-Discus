@@ -45,7 +45,7 @@ const ItemCount = (props) => {
                 <button onClick={handleStock.sumaStock} className='btn-sumar-resta' >+</button>
             </div>
             <div>
-                <h6 className='stock' >Stock disponible {stock}</h6>
+                <h6 className='stock'> Stock disponible {stock}</h6>
             </div>
             {unidades > 0 &&
                 <div className='btn-agregar'>

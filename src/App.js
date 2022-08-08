@@ -12,9 +12,6 @@ import Buy from'./Components/Compra/Compra.js';
 import PecesDiscus from "./Components/Pecesdiscus/PecesDiscus";
 import Historia from "./Components/Historia/Historia.js";
 
-
-
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -22,7 +19,7 @@ const App = () => {
         <NavBar />
         <Titulo titulo='Almacen de Discus' />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path=''>
         <Main/>
         <Titulo subtitulo='Shoop de Almacen De Discus' />
             <ItemListContainer/>          
