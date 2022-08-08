@@ -33,7 +33,9 @@ const ItemDetail = ({ id, nombre, descripcion, precio, stock, imagen }) => {
                 <Card.Text > Precio ${precio}  </Card.Text>
                 <Card.Text className="descri">{descripcion}</Card.Text>
                 {!compra ? <ItemCount stock={stock} onAdd={agregar}  /> :
-                    <><Link to='/cart'><Button>Terminar compra</Button></Link><Link to='/productos'><Button>Seguir comprando</Button></Link></>
+                    <><Link to='/Proyecto-React-Almacen-de-Discus/cart'><Button>Terminar compra</Button></Link>
+                    <Link to='/Proyecto-React-Almacen-de-Discus/productos'><Button>Seguir comprando</Button></Link>
+                    </>
                 }
             </Card.Body>
         </Card>

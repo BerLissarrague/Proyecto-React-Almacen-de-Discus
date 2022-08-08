@@ -28,8 +28,8 @@ const Cart = () => {
                     <h4 className='tituloTotal'>El total del carrito es {total}</h4>
                     <div div className='bntvaciar' >
                         <Button onClick={() => clear()}>Vaciar Carro</Button>
-                        <Link to={'/buy'}> <Button variant='outline-primary'>Finalizar Compra</Button></Link>
-                        <Link to={'/productos'}> <Button>Seguir comprando </Button></Link>
+                        <Link to={'/Proyecto-React-Almacen-de-Discus/buy'}> <Button variant='outline-primary'>Finalizar Compra</Button></Link>
+                        <Link to={'/Proyecto-React-Almacen-de-Discus/productos'}> <Button>Seguir comprando </Button></Link>
                     </div>
                 </>
                 :

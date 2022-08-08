@@ -19,32 +19,32 @@ const App = () => {
         <NavBar />
         <Titulo titulo='Almacen de Discus' />
         <Switch>
-          <Route exact path=''>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus'>
         <Main/>
         <Titulo subtitulo='Shoop de Almacen De Discus' />
             <ItemListContainer/>          
           </Route>
-          <Route exact path='/productos'>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/productos'>
              <ItemListContainer/>
           </Route>
-          <Route exact path='/productos/:id' component={ItemDetailContainer} />
-        <Route exact path='/categoria/:categoriaId'>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/productos/:id' component={ItemDetailContainer} />
+        <Route exact path='/Proyecto-React-Almacen-de-Discus/categoria/:categoriaId'>
         <Titulo subtitulo="" /> 
           <ItemListContainer />
         </Route>
-        <Route exact path='/cart'>
+        <Route exact path='/Proyecto-React-Almacen-de-Discus/cart'>
         <Titulo subtitulo='Carrito '/>   
           <Cart />
        </Route>
-        <Route exact path='/buy'>
+        <Route exact path='/Proyecto-React-Almacen-de-Discus/buy'>
         <Titulo subtitulo='Formulario de compra '/>   
               <Buy />
             </Route>
-            <Route exact path='/cuidadosDeDiscus'>
+            <Route exact path='/Proyecto-React-Almacen-de-Discus/cuidadosDeDiscus'>
         <Titulo subtitulo='Cuidado de sus Discus '/>   
               <PecesDiscus />
             </Route>
-            <Route exact path='/Historia'>
+            <Route exact path='/Proyecto-React-Almacen-de-Discus/Historia'>
         <Titulo subtitulo='Nuestra historia '/>   
               <Historia />
             </Route>

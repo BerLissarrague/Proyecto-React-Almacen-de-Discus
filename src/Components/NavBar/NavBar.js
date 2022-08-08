@@ -15,15 +15,15 @@ const NavBar = () => {
 
     return (
             <Navbar bg="dark" expand="sm" className='nav'>
-                <Navbar.Brand as={Link} to={'/'} className='item-nav'><img src='https://firebasestorage.googleapis.com/v0/b/e-commerce-almacen-de-discus.appspot.com/o/logo1.png?alt=media&token=f28f6626-e8a0-49ad-9a0d-c2d980dc6216' alt='logo' className='logo' /></Navbar.Brand>
+                <Navbar.Brand as={Link} to={'/Proyecto-React-Almacen-de-Discus'} className='item-nav'><img src='https://firebasestorage.googleapis.com/v0/b/e-commerce-almacen-de-discus.appspot.com/o/logo1.png?alt=media&token=f28f6626-e8a0-49ad-9a0d-c2d980dc6216' alt='logo' className='logo' /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" >
                     <Nav
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Nav.Link as={Link} to={'/Historia'} className='item-nav'>Historia</Nav.Link>
-                        <Nav.Link as={Link} to={'/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
+                        <Nav.Link as={Link} to={'/Proyecto-React-Almacen-de-Discus/Historia'} className='item-nav'>Historia</Nav.Link>
+                        <Nav.Link as={Link} to={'/Proyecto-React-Almacen-de-Discus/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
                         <NavDropdown  title="Productos" id="basic-nav-dropdown">
                             {categorias && categorias.length > 0 &&
                                 categorias.map((categoria) => {
@@ -31,7 +31,7 @@ const NavBar = () => {
                                         <NavDropdown.Item 
                                             key={categoria.id}
                                             as={Link}
-                                            to={`/categoria/${categoria.address}`}>{categoria.text}
+                                            to={`/Proyecto-React-Almacen-de-Discus/categoria/${categoria.address}`}>{categoria.text}
                                         </NavDropdown.Item>
                                     )
                                 })
@@ -41,7 +41,7 @@ const NavBar = () => {
                 </Navbar.Collapse>
                 {unidades > 0 &&
                     <React.Fragment>
-                        <Nav.Link as={Link} to={`/cart`} className="text-white">
+                        <Nav.Link as={Link} to={`/Proyecto-React-Almacen-de-Discus/cart`} className="text-white">
                             <CartWidget unidades={unidades} color='primary' />
                         </Nav.Link>
                         <span className="vertical-divider ml-2 mr-2"></span>
