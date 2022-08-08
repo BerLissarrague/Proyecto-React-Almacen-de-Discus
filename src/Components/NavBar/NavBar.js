@@ -22,8 +22,8 @@ const NavBar = () => {
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Nav.Link as={Link} to={'/Proyecto-React-Almacen-de-Discus/Historia'} className='item-nav'>Historia</Nav.Link>
-                        <Nav.Link as={Link} to={'/Proyecto-React-Almacen-de-Discus/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
+                        <Nav.Link as={Link} to={'/Historia'} className='item-nav'>Historia</Nav.Link>
+                        <Nav.Link as={Link} to={'/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
                         <NavDropdown  title="Productos" id="basic-nav-dropdown">
                             {categorias && categorias.length > 0 &&
                                 categorias.map((categoria) => {
@@ -31,7 +31,7 @@ const NavBar = () => {
                                         <NavDropdown.Item 
                                             key={categoria.id}
                                             as={Link}
-                                            to={`/Proyecto-React-Almacen-de-Discus/categoria/${categoria.address}`}>{categoria.text}
+                                            to={`/categoria/${categoria.address}`}>{categoria.text}
                                         </NavDropdown.Item>
                                     )
                                 })
