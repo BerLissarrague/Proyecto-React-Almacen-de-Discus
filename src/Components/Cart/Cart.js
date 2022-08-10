@@ -37,7 +37,7 @@ const Cart = () => {
                     <Row className='mt-4 text-center'>
                         <Col>
                             <h3 >No hay items en tu carrito</h3>
-                            <Button as={Link} to={`/productos`} variant='outline-primary' >Empezá a comprar</Button>
+                            <Button as={Link} to={`/Proyecto-React-Almacen-de-Discus/productos`} variant='outline-primary' >Empezá a comprar</Button>
                         </Col>
                     </Row>
                 </>
