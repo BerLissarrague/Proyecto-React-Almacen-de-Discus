@@ -44,7 +44,7 @@ const App = () => {
         <Titulo subtitulo='Cuidado de sus Discus '/>   
               <PecesDiscus />
             </Route>
-            <Route exact path='/Proyecto-React-Almacen-de-Discus/Historia'>
+            <Route exact path='/Proyecto-React-Almacen-de-Discus/historia'>
         <Titulo subtitulo='Nuestra historia '/>   
               <Historia />
             </Route>
