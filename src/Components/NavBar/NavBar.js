@@ -22,8 +22,8 @@ const NavBar = () => {
                         className="mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Nav.Link as={Link} to={'/Historia'} className='item-nav'>Historia</Nav.Link>
-                        <Nav.Link as={Link} to={'/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
+                        <Nav.Link as={Link} to={'Proyecto-React-Almacen-de-Discus/historia'} className='item-nav'>Historia</Nav.Link>
+                        <Nav.Link as={Link} to={'Proyecto-React-Almacen-de-Discus/cuidadosDeDiscus'} className='item-nav'>Cuidado de Discus</Nav.Link>
                         <NavDropdown  title="Productos" id="basic-nav-dropdown">
                             {categorias && categorias.length > 0 &&
                                 categorias.map((categoria) => {
@@ -31,7 +31,7 @@ const NavBar = () => {
                                         <NavDropdown.Item 
                                             key={categoria.id}
                                             as={Link}
-                                            to={`/categoria/${categoria.address}`}>{categoria.text}
+                                            to={`Proyecto-React-Almacen-de-Discus/categoria/${categoria.address}`}>{categoria.text}
                                         </NavDropdown.Item>
                                     )
                                 })
@@ -41,7 +41,7 @@ const NavBar = () => {
                 </Navbar.Collapse>
                 {unidades > 0 &&
                     <React.Fragment>
-                        <Nav.Link as={Link} to={`/Proyecto-React-Almacen-de-Discus/cart`} className="text-white">
+                        <Nav.Link as={Link} to={`/cart`} className="text-white">
                             <CartWidget unidades={unidades} color='primary' />
                         </Nav.Link>
                         <span className="vertical-divider ml-2 mr-2"></span>
