@@ -126,7 +126,6 @@ const Buy = () => {
                                 onChange={handleChange}
                             />
                         </Form.Group>
-
                     </Form.Group>
                     <Form.Group >
                         <Form.Label>Telefono</Form.Label>
