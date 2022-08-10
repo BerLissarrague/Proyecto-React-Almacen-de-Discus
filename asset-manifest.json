@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Proyecto-React-Almacen-de-Discus/static/css/main.ad99debf.chunk.css",
-    "main.js": "/Proyecto-React-Almacen-de-Discus/static/js/main.62e81bda.chunk.js",
-    "main.js.map": "/Proyecto-React-Almacen-de-Discus/static/js/main.62e81bda.chunk.js.map",
+    "main.js": "/Proyecto-React-Almacen-de-Discus/static/js/main.e88fc2c3.chunk.js",
+    "main.js.map": "/Proyecto-React-Almacen-de-Discus/static/js/main.e88fc2c3.chunk.js.map",
     "runtime-main.js": "/Proyecto-React-Almacen-de-Discus/static/js/runtime-main.3235eb66.js",
     "runtime-main.js.map": "/Proyecto-React-Almacen-de-Discus/static/js/runtime-main.3235eb66.js.map",
     "static/js/2.66714606.chunk.js": "/Proyecto-React-Almacen-de-Discus/static/js/2.66714606.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3235eb66.js",
     "static/js/2.66714606.chunk.js",
     "static/css/main.ad99debf.chunk.css",
-    "static/js/main.62e81bda.chunk.js"
+    "static/js/main.e88fc2c3.chunk.js"
   ]
 }
