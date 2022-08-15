@@ -7,10 +7,14 @@ import Footer from './Components/Footer/Footer.js';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartFuncion } from "./Context/CartContex.js";
 import Cart from "./Components/Cart/Cart";
-import Main  from "./Components/Main/Main";
-import Buy from'./Components/Compra/Compra.js';
-import PecesDiscus from "./Components/Pecesdiscus/PecesDiscus";
+import Main from "./Components/Main/Main";
+import Buy from './Components/compra/Compra.js';
+import PecesDiscus from './Components/Pecesdiscus/Pecesdiscus.js'
 import Historia from "./Components/Historia/Historia.js";
+import { Register } from "./Components/Register/register.js";
+import { Login } from "./Components/Login/login.js";
+
+
 
 const App = () => {
   return (
@@ -20,39 +24,41 @@ const App = () => {
         <Titulo titulo='Almacen de Discus' />
         <Switch>
           <Route exact path='/Proyecto-React-Almacen-de-Discus'>
-        <Main/>
-        <Titulo subtitulo='Shoop de Almacen De Discus' />
-            <ItemListContainer/>          
+            <Main />
+            <Titulo subtitulo='Shoop de Almacen De Discus' />
+            <ItemListContainer />
           </Route>
           <Route exact path='/Proyecto-React-Almacen-de-Discus/productos'>
-             <ItemListContainer/>
+            <ItemListContainer />
           </Route>
           <Route exact path='/Proyecto-React-Almacen-de-Discus/productos/:id' component={ItemDetailContainer} />
-        <Route exact path='/Proyecto-React-Almacen-de-Discus/categoria/:categoriaId'>
-        <Titulo subtitulo="" /> 
-          <ItemListContainer />
-        </Route>
-        <Route exact path='/Proyecto-React-Almacen-de-Discus/cart'>
-        <Titulo subtitulo='Carrito '/>   
-          <Cart />
-       </Route>
-        <Route exact path='/Proyecto-React-Almacen-de-Discus/buy'>
-        <Titulo subtitulo='Formulario de compra '/>   
-              <Buy />
-            </Route>
-            <Route exact path='/Proyecto-React-Almacen-de-Discus/cuidadosDeDiscus'>
-        <Titulo subtitulo='Cuidado de sus Discus '/>   
-              <PecesDiscus />
-            </Route>
-            <Route exact path='/Proyecto-React-Almacen-de-Discus/historia'>
-        <Titulo subtitulo='Nuestra historia '/>   
-              <Historia />
-            </Route>
-        </Switch>  
-               
-      <Footer />
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/categoria/:categoriaId'>
+            <Titulo subtitulo="" />
+            <ItemListContainer />
+          </Route>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/cart'>
+            <Titulo subtitulo='Carrito ' />
+            <Cart />
+          </Route>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/buy'>
+            <Titulo subtitulo='Formulario de compra ' />
+            <Buy />
+          </Route>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/cuidadosDeDiscus'>
+            <Titulo subtitulo='Cuidado de sus Discus ' />
+            <PecesDiscus />
+          </Route>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/historia'>
+            <Titulo subtitulo='Nuestra historia ' />
+            <Historia />
+          </Route>
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/register' component={Register} />
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/login' component={Login} />
+        </Switch>
+
+        <Footer />
       </CartFuncion>
-    </BrowserRouter>
+    </BrowserRouter >
 
 
   )
