@@ -1,10 +1,45 @@
-import React, { useState } from "react";
-const Context = React.createContext()
+import { createContext, useContext, useEffect, useState } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from 'firebase/auth';
+import { auth } from "../lib/FirebaseConfig";
 
+const Context = createContext()
+
+export const useAuth = () => {
+  const context = useContext(Context);
+
+  if (!context) {
+    throw new Error('No hay provider')
+  };
+  return context
+};
 const CartFuncion = ({ children }) => {
   const [carro, setCarro] = useState([]);
   const [unidades, setUnidades] = useState(0);
   const [total, setTotal] = useState(0);
+
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  const singup = (email, password) => createUserWithEmailAndPassword(auth, email, password, setLoading(true));
+
+  const login = (email, password) => signInWithEmailAndPassword(auth, email, password, setLoading(true));
+  const logout = () => signOut(auth, setLoading(false));
+
+  const loginGoogleAuth = () => {
+    const googleProvider = new GoogleAuthProvider();
+    return signInWithPopup(auth, googleProvider, setLoading(true));
+  };
+  const restPassword = (email) => {
+    sendPasswordResetEmail(auth, email)
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser)
+      setLoading()
+    })
+    return () => unsubscribe();
+  }, []);
 
 
   const onAdd = (producto, cantidad) => {  //Agregaa un item al carrito, 
@@ -65,7 +100,7 @@ const CartFuncion = ({ children }) => {
     return position;
   };
 
-  return <Context.Provider value={{ carro, unidades, total, onAdd, clear, removeItem, isInCart }}>
+  return <Context.Provider value={{ carro, unidades, total, onAdd, clear, removeItem, isInCart, user, loading, singup, login, logout, loginGoogleAuth, restPassword }}>
     {children}
   </Context.Provider>
 

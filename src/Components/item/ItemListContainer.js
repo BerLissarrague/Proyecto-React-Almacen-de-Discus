@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList from "./ItemList/ItemList";
-import getDb from '../../lib/firebaseConfig.js';
-import './ItemListContainer.css';
-import { collection, query, getDocs, where } from "@firebase/firestore";
-import Cargando from '../Cargando/Cargando.js';
+import ItemList from './ItemList';
+import getDb from '../../lib/FirebaseConfig';
+import { collection, query, getDocs, where } from '@firebase/firestore';
+import Cargando from '../cargando/Cargando';
 
 const ItemListContainer = () => {
 
@@ -35,7 +34,7 @@ const ItemListContainer = () => {
     cargando ? (
       <Cargando />
     ) : (
-      <ItemList productos={productos} />)
+      <ItemList  productos={productos} />)
   );
 
 };

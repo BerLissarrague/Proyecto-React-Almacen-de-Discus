@@ -1,16 +1,18 @@
 import React from "react";
-import NavBar from "./Components/NavBar/NavBar.js";
-import Titulo from './Components/Titulo/Titulo.js';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer.js';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer.js';
-import Footer from './Components/Footer/Footer.js';
+import NavBar from './components/navBar/NavBar';
+import Titulo from './components/titulo/Titulo';
+import ItemListContainer from './components/item/ItemListContainer';
+import ItemDetailContainer from './components/item/ItemDetailContainer';
+import Cart from "./components/cart/Cart";
+import Main  from "./components/carrouselImagenes/CarrouselImagenes";
+import Footer from './components/footer/Footer.js';
+import Buy from'./pages/FormularioConfirmacion';
+import PecesDiscus from "./pages/PecesDiscus";
+import Historia from "./pages/Historia";
+import { Register } from "./pages/Registro";
+import { Login } from "./pages/Login";
+import { CartFuncion } from "./context/CartContex.js";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { CartFuncion } from "./Context/CartContex.js";
-import Cart from "./Components/Cart/Cart";
-import Main  from "./Components/Main/Main";
-import Buy from'./Components/Compra/Compra.js';
-import PecesDiscus from "./Components/Pecesdiscus/PecesDiscus";
-import Historia from "./Components/Historia/Historia.js";
 
 const App = () => {
   return (
@@ -48,8 +50,9 @@ const App = () => {
         <Titulo subtitulo='Nuestra historia '/>   
               <Historia />
             </Route>
-        </Switch>  
-               
+            <Route exact path='/Proyecto-React-Almacen-de-Discus/register' component={Register} />
+          <Route exact path='/Proyecto-React-Almacen-de-Discus/login' component={Login} />
+        </Switch>                 
       <Footer />
       </CartFuncion>
     </BrowserRouter>

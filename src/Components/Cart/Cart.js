@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Context } from "../../Context/CartContex";
+import React, { useContext } from 'react';
+import { Context } from '../../context/CartContex';
 import Card from 'react-bootstrap/Card';
 import { Button, Row, Col, } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
@@ -20,7 +20,7 @@ const Cart = () => {
                                 <Card.Text> Cantidad: {item.cantidad}</Card.Text>
                                 <Card.Text> Subtotal: {item.subtotal}</Card.Text>
                             </Card.Body>
-                            <Link to={`/productos/${item.id}`}><Card.Img className='imgCardcarro' variant="center" src={item.imagen} alt={item.nombre} /></Link>
+                            <Link to={`/Proyecto-React-Almacen-de-Discus/productos/${item.id}`}><Card.Img className='imgCardcarro' variant="center" src={item.imagen} alt={item.nombre} /></Link>
                             <Button className='btnremove'
                                 onClick={() => removeItem(item.id, item.subtotal)}>Remover</Button>
                         </Card>
@@ -35,7 +35,7 @@ const Cart = () => {
                 :
                 <>
                     <Row className='mt-4 text-center container'>
-                        <Col>
+                        <Col className='text-center '>
                             <h3 >No hay items en tu carrito</h3>
                             <Button as={Link} to={`/Proyecto-React-Almacen-de-Discus/productos`} variant='outline-primary' >Empezá a comprar</Button>
                         </Col>

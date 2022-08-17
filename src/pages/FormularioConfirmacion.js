@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Context } from '../../Context/CartContex.js';
-import getDb from '../../lib/firebaseConfig';
+import { Context } from '../context/CartContex';
+import getDb from '../lib/FirebaseConfig';
 import { collection, getDoc, doc, addDoc, updateDoc } from "firebase/firestore";
 import { Button, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
-import './Compra.css';
+import './FormularioConfirmacion';
 
 const Buy = () => {
     const history = useHistory();
@@ -88,7 +88,7 @@ const Buy = () => {
     };
     return (
         <>
-            <div className='buy'>
+            <div className='buy container'>
                 <div className='buy-text'>
                     <h3>Para continuar con el proceso, complete el formulario con sus datos para que podamos enviar su pedido.</h3>
                 </div>

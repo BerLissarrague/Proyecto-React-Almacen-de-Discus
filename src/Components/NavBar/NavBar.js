@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import './NavBar.css';
-import CartWidget from "./CartWidget/CartWidget ";
+import CartWidget from "./cartWidget/CartWidget ";
 import { Link } from "react-router-dom";
-import { Context } from "../../Context/CartContex";
+import { Context } from "../../context/CartContex";
+import Perfil from "../../pages/Perfil"
 
 const NavBar = () => {
-    const { unidades } = useContext(Context);
+    const { unidades, loading  } = useContext(Context);
     const categorias = [
         { id: 'Insumos', address: 'insumos', text: 'Insumos' },
         { id: 'Plantas', address: 'plantas', text: 'Plantas' },
@@ -47,6 +48,9 @@ const NavBar = () => {
                         <span className="vertical-divider ml-2 mr-2"></span>
                     </React.Fragment>
                 }
+                 {loading ? <Perfil /> :
+                <button ><Link to="/Proyecto-React-Almacen-de-Discus/login">Ingresa</Link></button>
+            }
             </Navbar>    
               
     )

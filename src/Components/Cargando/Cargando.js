@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Cargando = () => {
   return (
     <div className="text-center" style={{ margin: '8%' }}>

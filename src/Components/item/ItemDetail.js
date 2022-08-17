@@ -1,13 +1,11 @@
-import ItemCount from "../../ItemCount/ItemCount.js";
+import ItemCount from "./ItemCount";
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../../../Context/CartContex.js";
+import { Context } from '../../context/CartContex';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './ItemDetail.css';
 import swal from "sweetalert";
-
-
 
 const ItemDetail = ({ id, nombre, descripcion, precio, stock, imagen }) => {
 
